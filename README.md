@@ -131,6 +131,15 @@ Use the Helm CLI to manage charts and releases. Key commands include:
   helm search hub wordpress
   helm search repo bitnami/wordpress
   ```
+  To check available versions of a chart (e.g., Bitnami's Nginx) and their corresponding app versions:
+  ```bash
+  helm search repo bitnami/nginx --versions
+  ```
+  - Use `--version` (singular) to specify a single chart version for installation:
+    ```bash
+    helm install nginx-release bitnami/nginx --version 7.1.0
+    ```
+  - Use `--versions` (plural) to list all available versions of a chart.
 - **Manage Repositories**:
   Add, list, or update repositories:
   ```bash
@@ -186,7 +195,7 @@ Helm tracks the lifecycle of releases, including installations, upgrades, and ro
   ```
 
 - **Install Specific Version**:
-  Specify a chart version:
+  Specify a chart version to install a specific app version:
   ```bash
   helm install nginx-release bitnami/nginx --version 7.1.0
   ```
